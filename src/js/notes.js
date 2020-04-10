@@ -21,7 +21,7 @@ var notes = {
     notes.getGeometry();
     notes.getMaterial();
 
-    sync.getNotes();
+    //sync.getNotes();
   },
 
   getGeometry: function () {
