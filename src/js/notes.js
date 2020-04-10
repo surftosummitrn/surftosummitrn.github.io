@@ -21,7 +21,9 @@ var notes = {
     notes.getGeometry();
     notes.getMaterial();
 
-    //sync.getNotes();
+    content.map((note, i) => (
+      notes.add(i, note)
+    ))
   },
 
   getGeometry: function () {
