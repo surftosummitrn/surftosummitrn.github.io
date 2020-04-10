@@ -158,7 +158,7 @@ var notes = {
     for ( var j = 0; j < 10; j++ ) {
       notes.active.data['c'+(j+1)] = document.getElementById('note-edit--c'+(j+1)).value;
     }
-    sync.updateNoteText(notes.active);
+    //sync.updateNoteText(notes.active);
     notes.drawText(notes.active);
     notes.close();
   },
@@ -175,7 +175,7 @@ var notes = {
   },
 
   removeActive: function () {
-    sync.removeNote(notes.active.key);
+    //sync.removeNote(notes.active.key);
     notes.close();
   },
 
@@ -190,7 +190,7 @@ var notes = {
       if ( !!notes.active ) {
         notes.close();
       } else {
-        sync.addNote(notes.calcPosition(event));
+        //sync.addNote(notes.calcPosition(event));
       }
     }
   },

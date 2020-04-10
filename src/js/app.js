@@ -30,7 +30,7 @@ var app = {
       app.controls = new THREE.DeviceOrientationControls( app.camera );
     }
 
-    sync.init();
+    //sync.init();
     notes.init();
     groups.init();
     skybox.init();
