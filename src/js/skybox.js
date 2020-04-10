@@ -2,7 +2,7 @@
 
 var skybox = {
 
-  texture: 'src/textures/skybox_sea3.png',
+  texture: 'src/textures/skybox_pelican_cove_lg.png',
 
   init: function () {
     skybox.load();
@@ -14,7 +14,7 @@ var skybox = {
     var loader = new THREE.ImageLoader();
     loader.load(skybox.texture, function ( image ) {
 
-      var size = 1024;
+      var size = 2000;
       var canvas, context, texture;
       var getSide = function (x, y) {
         canvas = document.createElement('canvas');
