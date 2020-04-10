@@ -11,6 +11,16 @@ var app = {
   init: function () {
     if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
+    app.rendererCSS = new THREE.CSS3DRenderer();
+    app.rendererCSS.setSize( window.innerWidth, window.innerHeight );
+    app.rendererCSS.domElement.style.position = 'absolute';
+    app.rendererCSS.domElement.style.top = 0;
+    app.rendererCSS.domElement.style.margin = 0;
+    app.rendererCSS.domElement.style.padding = 0;
+    document.body.appendChild( app.rendererCSS.domElement );
+
+    app.sceneCSS = new THREE.Scene();
+
     app.renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
     app.renderer.setPixelRatio( window.devicePixelRatio );
     app.renderer.setSize( window.innerWidth, window.innerHeight );
@@ -52,6 +62,7 @@ var app = {
     // Render if that is necessary
     if ( app.dirty ) {
       app.renderer.render(app.scene, app.camera);
+      app.rendererCSS.render(app.sceneCSS, app.camera);
       app.dirty = false;
     }
   },
