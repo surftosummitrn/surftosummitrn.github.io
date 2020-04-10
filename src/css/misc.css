@@ -17,7 +17,7 @@ body {
   pointer-events: none;
 }
 
-.branding {
+.youtube-link {
   width: auto;
   height: 50px;
   position: fixed;
@@ -25,7 +25,18 @@ body {
   right: 25px;
   z-index: 0;
   opacity: 0.15;
-  pointer-events: none;
+  cursor: pointer;
+}
+
+.insta-link {
+  width: auto;
+  height: 50px;
+  position: fixed;
+  bottom: 25px;
+  right: 125px;
+  z-index: 0;
+  opacity: 0.15;
+  cursor: pointer;
 }
 
 .progress-bar {
