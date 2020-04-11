@@ -74,7 +74,7 @@ var events = {
     document.removeEventListener('mouseup', events.onDocumentMouseUp);
 
     if ( !!events.clickedNote && !events.clickedNote.data.locked ) {
-      sync.updateNotePosition(events.clickedNote);
+      //sync.updateNotePosition(events.clickedNote);
     }
   },
 
@@ -94,7 +94,7 @@ var events = {
           events.clickedNote.rotation.y = data.yrot;
           events.clickedNote.text.position.copy(events.clickedNote.position);
           events.clickedNote.text.rotation.copy(events.clickedNote.rotation);
-          sync.updateNotePosition(events.clickedNote);
+          //sync.updateNotePosition(events.clickedNote);
         }
       } else {
         app.camera.rotation.y += movementX * 0.01;

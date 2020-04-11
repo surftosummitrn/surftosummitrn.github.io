@@ -7,7 +7,7 @@ var groups = {
   height: 5000,
 
   init: function () {
-    sync.getGroups();
+    //sync.getGroups();
   },
 
   isActive: function () {
@@ -39,7 +39,7 @@ var groups = {
   create: function (event) {
     var element = document.getElementById('groups-input--add');
     if ( !!element.value ) {
-      sync.addGroup(element.value);
+      //sync.addGroup(element.value);
       element.value = '';
     }
   },

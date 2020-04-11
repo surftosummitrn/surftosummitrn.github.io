@@ -37,7 +37,7 @@ var animation = {
   init: function () {
     animation.initContainer();
     animation.initCamera();
-    animation.reset();
+    //animation.reset();
   },
 
   initContainer: function () {
@@ -77,7 +77,7 @@ var animation = {
   },
 
   start: function () {
-    animation.startTextAnimation();
+    //animation.startTextAnimation();
     animation.startCameraPanAnimation();
   },
 

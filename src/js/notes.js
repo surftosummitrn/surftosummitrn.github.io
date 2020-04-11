@@ -21,7 +21,7 @@ var notes = {
     notes.getGeometry();
     notes.getMaterial();
 
-    sync.getNotes();
+    content.map(note => notes.add(note))
   },
 
   getGeometry: function () {
@@ -58,17 +58,26 @@ var notes = {
     };
   },
 
-  add: function (key, data) {
-    var note = new THREE.Mesh(notes.geometry, notes.material);
-    note.position.x = data.xpos;
-    note.position.y = data.ypos;
-    note.position.z = data.zpos;
-    note.rotation.y = data.yrot;
+  add: function (data) {
+    var element	= document.createElement('iframe')
+	  element.src	= data.src + '?rel=0';
+	  element.style.width = data.width;
+	  element.style.height = data.height;
+    element.setAttribute('frameborder', '0');
+    element.setAttribute('allow', 'autoplay');
+    element.setAttribute('allowfullscreen', '1');
 
-    note.key = key;
+    //var note = new THREE.Mesh(notes.geometry, notes.material);
+    var note = new THREE.CSS3DObject( element );
+    note.position.x = data.position.xpos;
+    note.position.y = data.position.ypos;
+    note.position.z = data.position.zpos;
+    note.rotation.y = data.position.yrot;
+
+    note.key = note.src;
     note.data = data;
-    app.scene.add(note);
-    notes.drawText(note);
+    app.sceneCSS.add(note);
+    //notes.drawText(note);
     notes.list.push(note);
   },
 
@@ -133,10 +142,10 @@ var notes = {
     for ( var i = 0; i < notes.list.length; i++ ) {
       if ( notes.list[i].key === key ) {
         var updatedNote = notes.list[i];
-        updatedNote.position.x = data.xpos;
-        updatedNote.position.y = data.ypos;
-        updatedNote.position.z = data.zpos;
-        updatedNote.rotation.y = data.yrot;
+        updatedNote.position.x = data.position.xpos;
+        updatedNote.position.y = data.position.ypos;
+        updatedNote.position.z = data.position.zpos;
+        updatedNote.rotation.y = data.position.yrot;
         for ( var j = 0; j < 10; j++ ) {
           updatedNote.data['c'+(j+1)] = data['c'+(j+1)];
         }
@@ -156,7 +165,7 @@ var notes = {
     for ( var j = 0; j < 10; j++ ) {
       notes.active.data['c'+(j+1)] = document.getElementById('note-edit--c'+(j+1)).value;
     }
-    sync.updateNoteText(notes.active);
+    //sync.updateNoteText(notes.active);
     notes.drawText(notes.active);
     notes.close();
   },
@@ -173,7 +182,7 @@ var notes = {
   },
 
   removeActive: function () {
-    sync.removeNote(notes.active.key);
+    //sync.removeNote(notes.active.key);
     notes.close();
   },
 
@@ -182,14 +191,14 @@ var notes = {
       if ( !note.data.locked ) {
         notes.close();
         notes.active = note;
-        notes.open(notes.active);
+        //notes.open(notes.active);
       }
     } else {
-      if ( !!notes.active ) {
-        notes.close();
-      } else {
-        sync.addNote(notes.calcPosition(event));
-      }
+      //if ( !!notes.active ) {
+      //  notes.close();
+      //} else {
+      //  //sync.addNote(notes.calcPosition(event));
+      //}
     }
   },
 

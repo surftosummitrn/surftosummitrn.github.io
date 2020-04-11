@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>G1B</title>
-  <meta name="description" content="G1B">
+  <title>SurfToSummitRN - The Gallery</title>
+  <meta name="description" content="SurfToSummitRN - The Gallery">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width">
   <meta name="theme-color" content="#111111">
-  <link rel="shortcut icon" type="text/css" href="src/images/icon.png?">
+  <link rel="shortcut icon" href="src/images/palms.png?">
   <link rel="stylesheet" type="text/css" href="src/css/animation.css">
   <link rel="stylesheet" type="text/css" href="src/css/notes.css">
   <link rel="stylesheet" type="text/css" href="src/css/groups.css">
@@ -26,11 +26,13 @@
 
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r83/build/three.min.js"></script>
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r83/examples/js/Detector.js"></script>
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/r83/examples/js/renderers/CSS3DRenderer.js"></script>
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r83/examples/js/controls/DeviceOrientationControls.js"></script>
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r83/examples/js/libs/tween.min.js"></script>
 
   <script src="src/js/animation.js"></script>
   <script src="src/js/progress.js"></script>
+  <script src="src/js/content.js"></script>
   <script src="src/js/skybox.js"></script>
   <script src="src/js/notes.js"></script>
   <script src="src/js/groups.js"></script>
@@ -42,7 +44,13 @@
   <script src="src/js/sync.js"></script>
   <script src="src/js/app.js"></script>
 
-  <img id="branding" class="branding" src="src/images/logo.png" alt="branding" />
+  <!-- Social Media -->
+  <a href="https://www.youtube.com/user/klibuser/" target="_blank">
+    <img id="youtube-link" class="youtube-link" src="src/images/youtube.svg" alt="youtube-link" />
+  </a>
+  <a href="https://www.instagram.com/surftosummitrn/" target="_blank">
+    <img id="insta-link" class="insta-link" src="src/images/insta.svg" alt="insta-link" />
+  </a>
 
   <div id="menu" class="menu">
     <div class="menu-container">
@@ -147,13 +155,12 @@
     <button id="note-edit-btn--delete" class="note-edit-btn--delete" type="button" tabindex="13">Delete</button>
   </div>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87989046-3"></script>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-87989046-1', 'auto');
-    ga('send', 'pageview');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-87989046-3');
   </script>
 
 </body>
